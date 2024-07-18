@@ -19,26 +19,7 @@ dependencies {
 
 
 }
-publishing {
-    repositories {
-        maven {
-            name = "Github"
-            url = uri("https://maven.pkg.github.com/sudhi001/remote_logger_java_client")
-            credentials {
-                username = findProperty("github.username")
-                password = findProperty("github.token")
-            }
-        }
-    }
-    publications {
-        register("jar", MavenPublication) {
-            from(components["java"])
-            pom {
-                url.set("https://github.com/sudhi001/remote_logger_java_client.git")
-            }
-        }
-    }
-}
+
 test {
     useJUnitPlatform()
 }
